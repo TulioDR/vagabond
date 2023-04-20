@@ -10,7 +10,7 @@ export default function Products() {
                <span className="material-icons !text-5xl">filter_alt</span>
             </button>
          </div>
-         <div className="grid grid-cols-3 gap-10 mt-10">
+         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-10">
             <Card name="Product Name" />
             <Card name="Product Name long long long" />
             <Card name="Product Name" />

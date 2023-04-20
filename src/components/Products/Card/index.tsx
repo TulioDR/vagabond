@@ -18,7 +18,9 @@ export default function Card({ name }: Props) {
                   {name}
                </div>
                <button className="w-8 h-8 grid place-content-center">
-                  <span className="material-icons">shopping_cart</span>
+                  <span className="material-icons !text-2xl">
+                     shopping_cart
+                  </span>
                </button>
             </div>
          </div>
