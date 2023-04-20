@@ -18,5 +18,5 @@
 
 body {
    color: rgb(var(--foreground-rgb));
-   @apply bg-stone-800;
+   @apply bg-stone-800 text-white;
 }
