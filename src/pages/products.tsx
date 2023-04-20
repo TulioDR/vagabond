@@ -4,7 +4,12 @@ import Subtitle from "@/components/Subtitle";
 export default function Products() {
    return (
       <div className="pt-20 px-10 bg-white text-black">
-         <Subtitle>Products</Subtitle>
+         <div className="flex items-end justify-between">
+            <Subtitle>Products</Subtitle>
+            <button className="grid place-content-center aspect-square">
+               <span className="material-icons !text-5xl">filter_alt</span>
+            </button>
+         </div>
          <div className="grid grid-cols-3 gap-10 mt-10">
             <Card name="Product Name" />
             <Card name="Product Name long long long" />
