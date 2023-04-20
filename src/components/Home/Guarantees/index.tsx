@@ -3,7 +3,7 @@ import Trait from "./Trait";
 
 type Props = {};
 
-export default function Traits({}: Props) {
+export default function Guarantees({}: Props) {
    return (
       <div className="bg-zinc-600 w-full py-10 2xl:py-14 rounded-3xl flex items-center">
          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 w-full px-10">

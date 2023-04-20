@@ -1,6 +1,7 @@
 import Banner from "@/components/Home/Banner";
 import Slider from "@/components/Home/Slider";
-import Traits from "@/components/Home/Traits";
+import Guarantees from "@/components/Home/Guarantees";
+import About from "@/components/Home/About";
 
 export default function Home() {
    return (
@@ -9,7 +10,8 @@ export default function Home() {
             <Banner />
             <Slider />
          </div>
-         <Traits />
+         <Guarantees />
+         <About />
       </main>
    );
 }
