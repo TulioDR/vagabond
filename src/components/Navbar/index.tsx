@@ -34,7 +34,9 @@ export default function Navbar({}: Props) {
             <NavLink href="/blog">Blog</NavLink>
             <NavLink href="/contacts">Contacts</NavLink>
          </div>
-         <div className="font-black text-3xl">Vagabond</div>
+         <div className="font-black text-3xl font-oswald uppercase">
+            Vagabond
+         </div>
          <div className="w-1/2 hidden lg:flex items-end h-full"></div>
       </div>
    );

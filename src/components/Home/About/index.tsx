@@ -1,19 +1,9 @@
-import Subtitle from "@/components/Subtitle";
+import Description from "./Description";
 
-type Props = {};
-
-export default function About({}: Props) {
+export default function About() {
    return (
-      <div className="grid md:grid-cols-2 gap-10 mt-10">
-         <div>
-            <div>
-               <Subtitle>About Us</Subtitle>
-            </div>
-            <div className="grid place-content-center text-justify">
-               Lorem Ipsum is simply dummy text of the printing and typesetting
-               industry.
-            </div>
-         </div>
+      <div className="grid md:grid-cols-2 gap-10 py-10 px-5 lg:px-10 xl:px-20">
+         <Description />
       </div>
    );
 }

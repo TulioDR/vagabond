@@ -15,6 +15,9 @@ module.exports = {
          colors: {
             brown: "#5C514D",
          },
+         fontFamily: {
+            oswald: "'Oswald', sans-serif",
+         },
       },
    },
    plugins: [],

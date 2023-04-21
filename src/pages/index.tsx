@@ -2,6 +2,8 @@ import Banner from "@/components/Home/Banner";
 import Slider from "@/components/Home/Slider";
 import Guarantees from "@/components/Home/Guarantees";
 import About from "@/components/Home/About";
+import Arrivals from "@/components/Home/Arrivals";
+import Quote from "@/components/Home/Quote";
 
 export default function Home() {
    return (
@@ -10,8 +12,12 @@ export default function Home() {
             <Banner />
             <Slider />
          </div>
-         <Guarantees />
-         <About />
+         <div className="space-y-10">
+            <Guarantees />
+            <About />
+            <Arrivals />
+            <Quote />
+         </div>
       </main>
    );
 }
