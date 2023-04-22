@@ -21,7 +21,7 @@ export default function Navbar({}: Props) {
 
    return (
       <div
-         className={`fixed top-0 left-0 w-full h-20 flex items-center justify-between px-10 z-20 ${
+         className={`fixed top-0 left-0 w-full h-20 flex items-center justify-between px-5 sm:px-10 z-20 ${
             isWhite ? "text-white" : "text-black"
          }`}
       >
