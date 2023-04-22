@@ -5,6 +5,7 @@ import About from "@/components/Home/About";
 import Arrivals from "@/components/Home/Arrivals";
 import Quote from "@/components/Home/Quote";
 import Blog from "@/components/Home/Blog";
+import Footer from "@/components/Footer";
 
 export default function Home() {
    return (
@@ -19,6 +20,7 @@ export default function Home() {
             <Arrivals />
             <Quote />
             <Blog />
+            <Footer />
          </div>
       </main>
    );

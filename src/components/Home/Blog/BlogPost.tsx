@@ -5,7 +5,7 @@ type Props = {};
 
 export default function BlogPost({}: Props) {
    return (
-      <div className="w-full grid sm:grid-cols-2 gap-10 2xl:gap-20">
+      <div className="w-full grid sm:grid-cols-2 gap-5 sm:gap-10 2xl:gap-20">
          <div className="aspect-[5/4] overflow-hidden rounded-2xl w-full">
             <Image src={bag} alt="bag" className="object-cover w-full h-full" />
          </div>

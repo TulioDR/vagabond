@@ -14,6 +14,9 @@ module.exports = {
          },
          colors: {
             brown: "#5C514D",
+            main: {
+               gray: "#3B3B3B",
+            },
          },
          fontFamily: {
             oswald: "'Oswald', sans-serif",
