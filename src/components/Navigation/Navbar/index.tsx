@@ -2,9 +2,12 @@ import { useEffect, useState } from "react";
 import NavLink from "./NavLink";
 import { useRouter } from "next/router";
 
-type Props = {};
+type Props = {
+   toggleSidebar: () => void;
+   isSidebarOpen: boolean;
+};
 
-export default function Navbar({}: Props) {
+export default function Navbar({ toggleSidebar, isSidebarOpen }: Props) {
    const [isWhite, setIsWhite] = useState<boolean>(true);
    const { route } = useRouter();
 
@@ -15,17 +18,18 @@ export default function Navbar({}: Props) {
       else setIsWhite(true);
    }, [route]);
 
-   useEffect(() => {
-      console.log();
-   }, []);
-
    return (
-      <div
+      <nav
          className={`fixed top-0 left-0 w-full h-20 flex items-center justify-between px-5 sm:px-10 z-20 ${
             isWhite ? "text-white" : "text-black"
          }`}
       >
-         <button className="lg:hidden">
+         <button
+            onClick={toggleSidebar}
+            className={`lg:hidden duration-300 ${
+               isSidebarOpen ? "text-white" : ""
+            }`}
+         >
             <span className="material-icons !text-4xl">menu</span>
          </button>
          <div className="w-1/2 hidden lg:flex space-x-10 xl:space-x-20 text-sm">
@@ -34,10 +38,14 @@ export default function Navbar({}: Props) {
             <NavLink href="/blog">Blog</NavLink>
             <NavLink href="/contacts">Contacts</NavLink>
          </div>
-         <div className="font-black text-3xl font-oswald uppercase">
+         <div
+            className={`font-black text-3xl font-oswald uppercase duration-300 ${
+               isSidebarOpen ? "text-white sm:text-inherit" : ""
+            }`}
+         >
             Vagabond
          </div>
          <div className="w-1/2 hidden lg:flex items-end h-full"></div>
-      </div>
+      </nav>
    );
 }
