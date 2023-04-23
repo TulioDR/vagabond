@@ -9,7 +9,7 @@ export default function Blog() {
             <Subtitle>Our Blog</Subtitle>
             <MainButton>Open Blog</MainButton>
          </div>
-         <div className="grid lg:grid-cols-2 gap-10 xl:gap-20 pt-10 sm:py-20">
+         <div className="grid lg:grid-cols-2 gap-10 xl:gap-20 pt-10 sm:pt-20 sm:pb-10">
             <BlogPost />
             <BlogPost />
             <BlogPost />

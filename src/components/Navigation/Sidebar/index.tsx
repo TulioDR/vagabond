@@ -23,7 +23,7 @@ export default function Sidebar({ closeSidebar }: Props) {
             <NavLink onClick={closeSidebar} href="/blog">
                Blog
             </NavLink>
-            <NavLink onClick={closeSidebar} href="/contacts">
+            <NavLink onClick={closeSidebar} href="/contact">
                Contacts
             </NavLink>
          </ul>

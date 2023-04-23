@@ -3,7 +3,7 @@ import Subtitle from "@/components/Subtitle";
 
 export default function Products() {
    return (
-      <div className="pt-20 px-10 bg-white text-black">
+      <div className="text-black">
          <div className="flex items-end justify-between">
             <Subtitle>Products</Subtitle>
             <button className="grid place-content-center aspect-square">
