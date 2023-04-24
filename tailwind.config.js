@@ -16,6 +16,7 @@ module.exports = {
             brown: "#5C514D",
             main: {
                gray: "#3B3B3B",
+               orange: "#fb923c",
             },
          },
          fontFamily: {

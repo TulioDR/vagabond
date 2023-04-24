@@ -33,7 +33,7 @@ export default function Input({ placeholder, textarea }: Props) {
                   animate={{ width: "100%" }}
                   exit={{ width: 0 }}
                   transition={{ duration: 0.4 }}
-                  className="absolute bottom-0 left-0 h-1 bg-orange-400"
+                  className="absolute bottom-0 left-0 h-1 bg-main-orange"
                />
             )}
          </AnimatePresence>

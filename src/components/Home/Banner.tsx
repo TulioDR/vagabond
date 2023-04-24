@@ -14,7 +14,7 @@ export default function Banner() {
                deleniti fugiat asperiores, quidem suscipit harum vel et. Quod,
                tempore!
             </div>
-            <button className="rounded-full bg-orange-300 text-black px-4 py-2 w-max text-sm">
+            <button className="rounded-full bg-main-orange text-black px-4 py-2 w-max text-sm">
                Explore More
             </button>
          </div>

@@ -8,7 +8,7 @@ type Props = {
 
 export default function SocialIcon({ src, alt }: Props) {
    return (
-      <div className="">
+      <div className="cursor-pointer">
          <Image src={src} alt={alt} />
       </div>
    );
