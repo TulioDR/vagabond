@@ -9,7 +9,7 @@ export default function ContactInfo({ icon, children }: Props) {
          <div className="grid place-content-center text-orange-400">
             <span className="material-icons !text-xl">{icon}</span>
          </div>
-         <div>{children}</div>
+         <div className="text-xs sm:text-sm">{children}</div>
       </div>
    );
 }
