@@ -1,5 +1,9 @@
+import HamburgerButton from "./HamburgerButton";
 import NavLink from "./NavLink";
 import useBackgroundColor from "@/hooks/useBackgroundColor";
+import Vagabond from "./Vagabond";
+import FavoriteButton from "./FavoriteButton";
+import CartButton from "./CartButton";
 
 type Props = {
    toggleSidebar: () => void;
@@ -15,28 +19,21 @@ export default function Navbar({ toggleSidebar, isSidebarOpen }: Props) {
             isWhite ? "text-black" : "text-white"
          }`}
       >
-         <button
+         <HamburgerButton
             onClick={toggleSidebar}
-            className={`lg:hidden duration-300 ${
-               isSidebarOpen ? "text-white" : ""
-            }`}
-         >
-            <span className="material-icons !text-4xl">menu</span>
-         </button>
+            isSidebarOpen={isSidebarOpen}
+         />
          <div className="w-1/2 hidden lg:flex space-x-10 xl:space-x-20 text-sm">
             <NavLink href="/">Home</NavLink>
             <NavLink href="/products">Products</NavLink>
             <NavLink href="/blog">Blog</NavLink>
             <NavLink href="/contact">Contacts</NavLink>
          </div>
-         <div
-            className={`font-black text-3xl font-oswald uppercase duration-300 ${
-               isSidebarOpen ? "text-white sm:text-inherit" : ""
-            }`}
-         >
-            Vagabond
+         <Vagabond isSidebarOpen={isSidebarOpen} />
+         <div className="w-1/2 hidden lg:flex space-x-3 items-center justify-end h-full">
+            <FavoriteButton />
+            <CartButton />
          </div>
-         <div className="w-1/2 hidden lg:flex items-end h-full"></div>
       </nav>
    );
 }
