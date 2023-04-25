@@ -19,12 +19,13 @@ export default function DirectionCard() {
             Our office is located in a beautiful building inside the busiest
             city ni the UK
          </p>
-         <ContactInfo icon="place">
-            <div className="text-lg font-bold">London, England</div>
-            <div>21A Lorem Ipsum Str. District 1, HCMC, Britain</div>
+         <ContactInfo text="London, England" big icon="place">
+            <div className="text-xs sm:text-sm pl-8">
+               21A Lorem Ipsum Str. District 1, HCMC, Britain
+            </div>
          </ContactInfo>
-         <ContactInfo icon="email">vagabond@loremipsum.com</ContactInfo>
-         <ContactInfo icon="phone">(+84) 12-345-6789</ContactInfo>
+         <ContactInfo text="vagabond@loremipsum.com" icon="email" />
+         <ContactInfo text="(+84) 12-345-6789" icon="phone" />
          <div className="flex space-x-3 ml-8">
             <SocialIcon src={instagram} alt="instagram" />
             <SocialIcon src={twitter} alt="twitter" />
