@@ -19,6 +19,9 @@ export default function App({ Component, pageProps }: AppProps) {
             <Component {...pageProps} />
             <Footer />
          </main>
+         <div id="modals">
+            {/* Here goes all the modals through React Portal (I love Glados and Chell)*/}
+         </div>
       </>
    );
 }
