@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
    return (
       <>
          <main
-            className={`px-5 sm:px-10 ${
+            className={`px-5 sm:px-10 pt-20 ${
                isWhite ? "bg-white text-black" : "bg-stone-800 text-white"
             }`}
          >

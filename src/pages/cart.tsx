@@ -6,22 +6,22 @@ type Props = {};
 
 export default function Cart({}: Props) {
    return (
-      <div>
+      <div className="space-y-10">
          <Subtitle>Shopping Cart</Subtitle>
-         <table className="w-full mt-10">
-            <tr className="uppercase text-gray-400 text-sm h-32">
-               <th className="w-72"></th>
-               <th className="text-left">Product</th>
-               <th className="text-left w-28">Price</th>
-               <th className="w-48">Qty</th>
-               <th className="text-left w-28">Total</th>
-               <th className="w-10"></th>
-            </tr>
+         <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-10">
             <ShoppingCard />
             <ShoppingCard />
             <ShoppingCard />
             <ShoppingCard />
-         </table>
+            <ShoppingCard />
+            <ShoppingCard />
+            <ShoppingCard />
+            <ShoppingCard />
+            <ShoppingCard />
+            <ShoppingCard />
+            <ShoppingCard />
+            <ShoppingCard />
+         </div>
          <CartFooter />
       </div>
    );

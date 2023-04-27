@@ -1,41 +1,36 @@
 import { useState } from "react";
-import Price from "./Price";
 import CardButton from "./CardButton";
+import CardHeader from "./CardHeader";
+import RemoveButton from "./RemoveButton";
+import Total from "./Total";
+import Quantity from "./Quantity";
 
 type Props = {};
 
 export default function ShoppingCard({}: Props) {
    const [quantity, setQuantity] = useState<number>(1);
-   const add = () => {
-      setQuantity((prev) => prev + 1);
-   };
+   const add = () => setQuantity((prev) => prev + 1);
    const subtract = () => setQuantity((prev) => prev - 1);
 
    return (
-      <tr className="h-48">
-         <td>
-            <div className="h-40 bg-gray-500 aspect-[5/4]"></div>
-         </td>
-         <td>
-            <div className="font-bold">Dell</div>
-            <div className="text-gray-500">Lorem Ipsum Dolor</div>
-         </td>
-         <td className="border-t border-gray-300">
-            <Price number={99.99} />
-         </td>
-         <td className="border-t border-gray-300">
-            <div className="flex items-center justify-center space-x-3">
-               <CardButton icon="remove" onClick={subtract} />
-               <span className="text-xl">{quantity}</span>
-               <CardButton icon="add" onClick={add} />
+      <div className="sm:flex space-y-5 sm:space-y-0 sm:space-x-5 w-full group">
+         <div className="w-full sm:w-1/3 aspect-square relative">
+            <RemoveButton onClick={() => {}} />
+            <div className="bg-gray-400 w-full h-full"></div>
+         </div>
+         <div className="flex-1 flex flex-col space-y-2 sm:space-y-0 justify-around">
+            <CardHeader name="Leather Bag" price={99.99} />
+            <div className="text-xs sm:text-sm text-gray-400">
+               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
             </div>
-         </td>
-         <td className="border-t border-gray-300">
-            <Price number={quantity * 99.99} />
-         </td>
-         <td className="border-t border-gray-300">
-            <CardButton icon="close" onClick={() => {}} />
-         </td>
-      </tr>
+            <div className="flex justify-between w-full">
+               <Quantity add={add} subtract={subtract} quantity={quantity} />
+               <Total price={99.99 * quantity} />
+               <div className="lg:hidden">
+                  <CardButton icon="delete" onClick={() => {}} />
+               </div>
+            </div>
+         </div>
+      </div>
    );
 }

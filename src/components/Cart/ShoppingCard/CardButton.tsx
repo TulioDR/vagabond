@@ -1,13 +1,18 @@
 type Props = {
    icon: string;
    onClick: () => void;
+   disabled?: boolean;
 };
 
-export default function CardButton({ icon, onClick }: Props) {
+export default function CardButton({ icon, onClick, disabled }: Props) {
    return (
       <button
          onClick={onClick}
-         className="aspect-square h-10 hover:bg-black hover:text-white text-4xl grid place-content-center rounded-full"
+         className={`aspect-square h-8 grid place-content-center rounded-full ${
+            disabled
+               ? "text-gray-500 pointer-events-none"
+               : "text-black hover:bg-black hover:text-white"
+         }`}
       >
          <span className="material-icons">{icon}</span>
       </button>
