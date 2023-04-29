@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image";
 
-export default interface ProductModel {
+export interface Product {
    id: string;
    name: string;
    image: StaticImageData;
@@ -8,6 +8,6 @@ export default interface ProductModel {
    description: string;
 }
 
-export interface CartProductModel extends ProductModel {
+export interface ProductCart extends Product {
    quantity: number;
 }

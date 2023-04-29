@@ -1,11 +1,11 @@
-import ProductModel from "@/models/ProductModel";
+import { Product } from "@/models/ProductModel";
 import { useEffect, useState } from "react";
 import CartButton from "./CartButton";
 import useCartContext from "@/context/CartContext";
 import Image from "next/image";
 
 type Props = {
-   product: ProductModel;
+   product: Product;
 };
 
 export default function ProductCard({ product }: Props) {

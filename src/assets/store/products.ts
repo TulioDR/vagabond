@@ -1,4 +1,4 @@
-import ProductModel from "@/models/ProductModel";
+import { Product } from "@/models/ProductModel";
 import bag1 from "@/assets/img/bags/bag-1.jpg";
 import bag2 from "@/assets/img/bags/bag-2.jpg";
 import bag3 from "@/assets/img/bags/bag-3.jpg";
@@ -21,7 +21,7 @@ const randomizeImage = () => {
    else return bag6;
 };
 
-const products: ProductModel[] = [];
+const products: Product[] = [];
 
 for (var i = 0; i < 100; i++) {
    products.push({

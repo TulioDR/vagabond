@@ -1,11 +1,11 @@
 import products from "@/assets/store/products";
 import ProductCard from "@/components/Products/ProductCard";
 import Subtitle from "@/components/Subtitle";
-import ProductModel from "@/models/ProductModel";
+import { Product } from "@/models/ProductModel";
 import { useEffect, useState } from "react";
 
 export default function Products() {
-   const [displayed, setDisplayed] = useState<ProductModel[]>([]);
+   const [displayed, setDisplayed] = useState<Product[]>([]);
    useEffect(() => {
       setDisplayed(products);
    }, []);

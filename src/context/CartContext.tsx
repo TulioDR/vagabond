@@ -1,104 +1,39 @@
-import ProductModel, { CartProductModel } from "@/models/ProductModel";
+import { Product } from "@/models/ProductModel";
 import { createContext, useContext, useReducer } from "react";
-interface Props {
-   children: React.ReactNode;
-}
+import cartReducer from "./cartReducer";
+import { CartState } from "@/models/CartModel";
+
 interface ContextInterface {
-   cartState: CartStateModel;
-   addToCart: (product: ProductModel) => void;
+   cartState: CartState;
+   addToCart: (product: Product) => void;
    removeFromCart: (id: string) => void;
    addOne: (id: string) => void;
    removeOne: (id: string) => void;
 }
+const defaultCartState: CartState = {
+   products: [],
+   totalAmount: 0,
+   totalQuantity: 0,
+};
 
 const CartContext = createContext({} as ContextInterface);
 export default function useCartContext() {
    return useContext(CartContext);
 }
+export function CartProvider({ children }: { children: React.ReactNode }) {
+   const [cartState, dispatch] = useReducer(cartReducer, defaultCartState);
 
-interface CartStateModel {
-   products: CartProductModel[];
-   subtotal: number;
-}
-
-const defaultCartState: CartStateModel = {
-   products: [],
-   subtotal: 0,
-};
-
-interface CartAction {
-   type: "ADD" | "REMOVE" | "ADD_ONE" | "REMOVE_ONE";
-   [key: string]: any;
-}
-
-const updateTotalAmount = (products: CartProductModel[]) => {
-   const newArray = products.map((p) => p.price * p.quantity);
-   const sum = newArray.reduce((accumulator, value) => {
-      return accumulator + value;
-   }, 0);
-   return sum;
-};
-
-export function CartProvider({ children }: Props) {
-   const cartReducer = (state: CartStateModel, action: CartAction) => {
-      switch (action.type) {
-         case "ADD":
-            action.product.quantity = 1;
-            var newArray: CartProductModel[] = [
-               ...state.products,
-               action.product,
-            ];
-            return {
-               products: newArray,
-               subtotal: updateTotalAmount(newArray),
-            };
-
-         case "REMOVE":
-            var newArray = state.products.filter((p) => p.id !== action.id);
-            return {
-               products: newArray,
-               subtotal: updateTotalAmount(newArray),
-            };
-         case "ADD_ONE":
-            var newArray = [...state.products];
-            const productIndex = newArray.findIndex(
-               (obj) => obj.id === action.id
-            );
-            newArray[productIndex].quantity++;
-            return {
-               products: newArray,
-               subtotal: updateTotalAmount(newArray),
-            };
-         case "REMOVE_ONE":
-            var newArray = [...state.products];
-            const productIndex1 = newArray.findIndex(
-               (obj) => obj.id === action.id
-            );
-            newArray[productIndex1].quantity--;
-            return {
-               products: newArray,
-               subtotal: updateTotalAmount(newArray),
-            };
-      }
-   };
-
-   const [cartState, dispatchCartAction] = useReducer(
-      cartReducer,
-      defaultCartState
-   );
-
-   const addToCart = (product: ProductModel) => {
-      dispatchCartAction({ type: "ADD", product });
+   const addToCart = (productCart: Product) => {
+      dispatch({ type: "ADD", product: { ...productCart, quantity: 1 } });
    };
    const removeFromCart = (id: string) => {
-      dispatchCartAction({ type: "REMOVE", id });
+      dispatch({ type: "REMOVE", id });
    };
-
    const addOne = (id: string) => {
-      dispatchCartAction({ type: "ADD_ONE", id });
+      dispatch({ type: "ADD_ONE", id });
    };
    const removeOne = (id: string) => {
-      dispatchCartAction({ type: "REMOVE_ONE", id });
+      dispatch({ type: "REMOVE_ONE", id });
    };
 
    const value: ContextInterface = {

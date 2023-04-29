@@ -1,5 +1,4 @@
 import MainButton from "@/components/MainButton";
-import Card from "@/components/Products/ProductCard";
 import Subtitle from "@/components/Subtitle";
 
 export default function Arrivals() {
@@ -10,9 +9,9 @@ export default function Arrivals() {
             <MainButton>All products</MainButton>
          </div>
          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-10">
-            <Card name="Lorem Ipsum" />
-            <Card name="Lorem Ipsum" />
-            <Card name="Lorem Ipsum" />
+            {/* <Card />
+            <Card />
+            <Card /> */}
          </div>
       </div>
    );

@@ -3,12 +3,12 @@ import CardHeader from "./CardHeader";
 import RemoveButton from "./RemoveButton";
 import Total from "./Total";
 import Quantity from "./Quantity";
-import { CartProductModel } from "@/models/ProductModel";
+import { ProductCart } from "@/models/ProductModel";
 import useCartContext from "@/context/CartContext";
 import CartCardImage from "./CartCardImage";
 
 type Props = {
-   product: CartProductModel;
+   product: ProductCart;
 };
 
 export default function ShoppingCard({ product }: Props) {

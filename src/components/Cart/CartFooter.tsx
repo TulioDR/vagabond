@@ -11,7 +11,7 @@ export default function CartFooter() {
          <div className="space-x-3 flex items-end">
             <span className="text-gray-500 text-sm">Total</span>
             <span className="font-bold text-xl w-[154px]">
-               ${cartState.subtotal}
+               ${cartState.totalAmount}
             </span>
          </div>
       </div>
