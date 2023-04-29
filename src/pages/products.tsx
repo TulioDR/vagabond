@@ -1,14 +1,15 @@
-import products from "@/assets/store/products";
 import ProductCard from "@/components/Products/ProductCard";
 import Subtitle from "@/components/Subtitle";
+import useCartContext from "@/context/CartContext";
 import { Product } from "@/models/ProductModel";
 import { useEffect, useState } from "react";
 
 export default function Products() {
+   const { products } = useCartContext();
    const [displayed, setDisplayed] = useState<Product[]>([]);
    useEffect(() => {
       setDisplayed(products);
-   }, []);
+   }, [products]);
    return (
       <div className="text-black">
          <div className="flex items-end justify-between">

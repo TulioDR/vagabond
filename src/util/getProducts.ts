@@ -21,16 +21,19 @@ const randomizeImage = () => {
    else return bag6;
 };
 
-const products: Product[] = [];
+const getProducts = (): Product[] => {
+   const products: Product[] = [];
+   for (var i = 0; i < 100; i++) {
+      products.push({
+         id: uuidv4(),
+         name: "Leather Bag",
+         image: randomizeImage(),
+         price: randomNumber(50, 400),
+         description:
+            "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+      });
+   }
+   return products;
+};
 
-for (var i = 0; i < 100; i++) {
-   products.push({
-      id: uuidv4(),
-      name: "Leather Bag",
-      image: randomizeImage(),
-      price: randomNumber(50, 400),
-      description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
-   });
-}
-
-export default products;
+export default getProducts;

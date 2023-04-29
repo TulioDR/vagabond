@@ -1,9 +1,17 @@
 import { Product } from "@/models/ProductModel";
-import { createContext, useContext, useReducer } from "react";
+import {
+   createContext,
+   useContext,
+   useEffect,
+   useReducer,
+   useState,
+} from "react";
 import cartReducer from "./cartReducer";
 import { CartState } from "@/models/CartModel";
+import getProducts from "@/util/getProducts";
 
 interface ContextInterface {
+   products: Product[];
    cartState: CartState;
    addToCart: (product: Product) => void;
    removeFromCart: (id: string) => void;
@@ -36,7 +44,15 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       dispatch({ type: "REMOVE_ONE", id });
    };
 
+   const [products, setProducts] = useState<Product[]>([]);
+
+   useEffect(() => {
+      const allProducts = getProducts();
+      setProducts(allProducts);
+   }, []);
+
    const value: ContextInterface = {
+      products,
       cartState,
       addToCart,
       removeFromCart,
