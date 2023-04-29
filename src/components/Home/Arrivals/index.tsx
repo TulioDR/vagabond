@@ -1,5 +1,5 @@
 import MainButton from "@/components/MainButton";
-import Card from "@/components/Products/Card";
+import Card from "@/components/Products/ProductCard";
 import Subtitle from "@/components/Subtitle";
 
 export default function Arrivals() {

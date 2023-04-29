@@ -6,7 +6,7 @@ export default function Banner() {
          <div className="flex-1 flex flex-col space-y-5 xl:space-y-10 justify-center">
             <Subtitle>
                <div className="">Elegant Leather</div>
-               <div className="">Men's Backpacks</div>
+               <div className="">{"Men's Backpacks"}</div>
             </Subtitle>
             <div className="text-xs lg:text-sm 2xl:text-base text-gray-300 pr-10 lg:pr-20">
                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
