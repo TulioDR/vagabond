@@ -10,7 +10,7 @@ export default function Total({ price }: Props) {
          <span className="text-gray-500 text-xs uppercase translate-y-[1px]">
             Total
          </span>
-         <span className="font-bold">${price.toFixed(2)}</span>
+         <span className="font-bold">${price}</span>
       </div>
    );
 }
