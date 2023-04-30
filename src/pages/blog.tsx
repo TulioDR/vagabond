@@ -1,6 +1,7 @@
+import FilterButton from "@/components/Filter/FilterButton";
 import BlogPost from "@/components/Home/Blog/BlogPost";
 import PageHead from "@/components/PageHead";
-import Subtitle from "@/components/Subtitle";
+import Subtitle from "@/components/PageTitle";
 
 export default function Blog() {
    return (
@@ -12,9 +13,7 @@ export default function Blog() {
          <div className="space-y-10">
             <div className="flex items-end justify-between">
                <Subtitle>Blog</Subtitle>
-               <button className="grid place-content-center aspect-square">
-                  <span className="material-icons !text-5xl">filter_alt</span>
-               </button>
+               <FilterButton />
             </div>
             <div className="grid lg:grid-cols-2 gap-10">
                <BlogPost />

@@ -10,6 +10,7 @@ export default function useBackgroundColor() {
       else if (route === "/blog") setIsWhite(false);
       else if (route === "/contact") setIsWhite(false);
       else if (route === "/cart") setIsWhite(true);
+      else if (route === "/wishlist") setIsWhite(false);
       else setIsWhite(false);
    }, [route]);
 

@@ -11,8 +11,9 @@ export default function Pagination({
    setCurrentPage,
    pagination,
 }: Props) {
+   if (pagination.length <= 1) return <></>;
    return (
-      <div className="flex">
+      <div className="flex w-max mx-auto">
          {pagination.map((number) => (
             <Page
                key={number}

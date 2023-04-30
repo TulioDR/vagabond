@@ -2,7 +2,7 @@ import HamburgerButton from "./HamburgerButton";
 import NavLink from "./NavLink";
 import useBackgroundColor from "@/hooks/useBackgroundColor";
 import Vagabond from "./Vagabond";
-import FavoriteButton from "./FavoriteButton";
+import WishlistButton from "./WishlistButton";
 import CartButton from "./CartButton";
 import { useEffect, useState } from "react";
 
@@ -47,7 +47,7 @@ export default function Navbar({ toggleSidebar, isSidebarOpen }: Props) {
          </div>
          <Vagabond isSidebarOpen={isSidebarOpen} />
          <div className="w-1/2 hidden lg:flex space-x-3 items-center justify-end h-full">
-            <FavoriteButton />
+            <WishlistButton />
             <CartButton />
          </div>
       </nav>

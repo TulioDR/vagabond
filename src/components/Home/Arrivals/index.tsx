@@ -1,6 +1,6 @@
 import MainButton from "@/components/MainButton";
 import ProductCard from "@/components/Products/ProductCard";
-import Subtitle from "@/components/Subtitle";
+import Subtitle from "@/components/PageTitle";
 import useCartContext from "@/context/CartContext";
 
 export default function Arrivals() {

@@ -1,7 +1,7 @@
 import CartFooter from "@/components/Cart/CartFooter";
 import ShoppingCard from "@/components/Cart/ShoppingCard";
 import PageHead from "@/components/PageHead";
-import Subtitle from "@/components/Subtitle";
+import Subtitle from "@/components/PageTitle";
 import useCartContext from "@/context/CartContext";
 
 export default function Cart() {

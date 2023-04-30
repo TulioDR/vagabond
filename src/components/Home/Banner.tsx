@@ -1,4 +1,4 @@
-import Subtitle from "../Subtitle";
+import Subtitle from "../PageTitle";
 
 export default function Banner() {
    return (

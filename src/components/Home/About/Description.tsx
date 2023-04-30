@@ -1,4 +1,4 @@
-import Subtitle from "@/components/Subtitle";
+import Subtitle from "@/components/PageTitle";
 
 export default function Description() {
    return (

@@ -1,5 +1,5 @@
 import MainButton from "@/components/MainButton";
-import Subtitle from "@/components/Subtitle";
+import Subtitle from "@/components/PageTitle";
 import BlogPost from "./BlogPost";
 
 export default function Blog() {
