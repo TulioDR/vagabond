@@ -26,8 +26,8 @@ export default function CartButton() {
    const { totalQuantity } = cartState;
    return (
       <>
-         <div className="relative">
-            <IconButton icon="shopping_cart" outlined onClick={goToCart} />
+         <div className="relative cursor-pointer" onClick={goToCart}>
+            <IconButton icon="shopping_cart" outlined onClick={() => {}} />
             {totalQuantity > 0 && (
                <div className="absolute -top-1 -right-3 rounded-full bg-main-orange grid place-content-center w-6 aspect-square">
                   <span className="text-xs font-medium text-black">
