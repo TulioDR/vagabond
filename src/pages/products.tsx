@@ -17,7 +17,7 @@ export default function Products() {
       <div className="text-black space-y-10">
          <div className="md:flex items-end justify-between space-y-5 md:space-y-0">
             <Subtitle>Products</Subtitle>
-            <div className="flex items-center space-x-3 ml-auto w-max">
+            <div className="flex items-center space-x-1 sm:space-x-3 ml-auto w-max">
                <Pagination
                   pagination={pagination}
                   currentPage={currentPage}

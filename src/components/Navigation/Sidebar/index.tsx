@@ -13,7 +13,7 @@ export default function Sidebar({ closeSidebar }: Props) {
          transition={{ duration: 0.4 }}
          className="fixed lg:hidden top-0 left-0 w-full sm:w-96 h-screen bg-brown z-10 shadow-xl py-20"
       >
-         <ul className="w-full h-full flex flex-col items-center justify-center space-y-5 font text-xl sm:text-2xl">
+         <ul className="w-full h-full flex flex-col items-center justify-center space-y-5 font text-xl sm:text-2xl text-white">
             <NavLink onClick={closeSidebar} href="/">
                Home
             </NavLink>
