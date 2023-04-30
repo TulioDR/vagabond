@@ -23,7 +23,7 @@ export default function usePagination({ arrayOfItems, itemsPerPage }: Props) {
       const i = itemsPerPage;
       setDisplayed(arrayOfItems.slice(n * i, n * i + i));
       window.scrollTo({ top: 0 });
-   }, [arrayOfItems, currentPage]);
+   }, [arrayOfItems, itemsPerPage, currentPage]);
 
    return {
       displayed,
