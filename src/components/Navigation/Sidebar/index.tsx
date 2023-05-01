@@ -26,6 +26,18 @@ export default function Sidebar({ closeSidebar }: Props) {
             <NavLink onClick={closeSidebar} href="/contact">
                Contacts
             </NavLink>
+            <NavLink onClick={closeSidebar} href="/wishlist">
+               <div className="flex items-center space-x-1">
+                  <span className="material-icons">favorite</span>
+                  <span>Wishlist</span>
+               </div>
+            </NavLink>
+            <NavLink onClick={closeSidebar} href="/cart">
+               <div className="flex items-center space-x-1">
+                  <span className="material-icons">shopping_cart</span>
+                  <span>Cart</span>
+               </div>
+            </NavLink>
          </ul>
       </motion.aside>
    );
