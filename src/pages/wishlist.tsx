@@ -7,9 +7,9 @@ import useWishlistContext from "@/context/WishlistContext";
 import usePagination from "@/hooks/usePagination";
 
 export default function Wishlist() {
-   const { wishList } = useWishlistContext();
+   const { wishlist } = useWishlistContext();
    const paginationHook = usePagination({
-      arrayOfItems: wishList,
+      arrayOfItems: wishlist,
       itemsPerPage: 12,
    });
    const { displayed, currentPage, setCurrentPage, pagination } =
@@ -20,7 +20,7 @@ export default function Wishlist() {
             title="Wishlist - Vagabond"
             description="Check our products in store"
          />
-         <div className="space-y-10">
+         <div className="space-y-10 min-h-screen">
             <div className="md:flex items-end justify-between space-y-5 md:space-y-0">
                <PageTitle>Wishlist</PageTitle>
                <div className="flex items-center space-x-1 sm:space-x-3 ml-auto w-max">

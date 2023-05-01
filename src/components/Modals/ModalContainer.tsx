@@ -1,24 +1,28 @@
-import { motion } from "framer-motion";
+import useBackgroundColor from "@/hooks/useBackgroundColor";
+import { AnimatePresence, motion } from "framer-motion";
 
 type Props = {
    children: React.ReactNode;
-   close: () => void;
+   isOpen: boolean;
 };
 
-export default function ModalContainer({ children, close }: Props) {
+export default function ModalContainer({ children, isOpen }: Props) {
+   const { isWhite } = useBackgroundColor();
    return (
-      <div className="fixed top-0 left-0 w-full z-30 h-screen">
-         <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.4 }}
-            className="w-full h-full bg-black/50 "
-            onClick={close}
-         />
-         <div className="fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-full h-4/5 bg-white rounded-3xl p-10 ">
-            {children}
-         </div>
-      </div>
+      <AnimatePresence>
+         {isOpen && (
+            <motion.div
+               initial={{ scale: 0.9, opacity: 0 }}
+               animate={{ scale: 1, opacity: 1 }}
+               exit={{ scale: 0.9, opacity: 0 }}
+               transition={{ duration: 0.1 }}
+               className={`absolute top-full right-0 w-80 overflow-auto space-y-3 shadow-xl p-5 ${
+                  isWhite ? "bg-stone-800 text-white" : "bg-white text-black"
+               }`}
+            >
+               {children}
+            </motion.div>
+         )}
+      </AnimatePresence>
    );
 }

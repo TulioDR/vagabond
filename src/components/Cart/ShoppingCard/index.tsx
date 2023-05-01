@@ -16,12 +16,12 @@ export default function ShoppingCard({ product }: Props) {
    const { price, id, image, quantity } = product;
    const deleteCard = () => removeFromCart(id);
    return (
-      <div className="sm:flex space-y-5 sm:space-y-0 sm:space-x-5 w-full group">
-         <div className="w-full sm:w-1/3 aspect-square relative">
+      <div className="sm:flex w-full group bg-stone-800 text-white">
+         <div className="w-full sm:w-1/3 aspect-square relative text-black">
             <CartCardImage src={image} alt={id} />
             <RemoveButton onClick={deleteCard} />
          </div>
-         <div className="flex-1 flex flex-col space-y-2 sm:space-y-0 justify-around">
+         <div className="flex-1 flex flex-col space-y-2 sm:space-y-0 justify-between p-5">
             <CardHeader name="Leather Bag" price={price} />
             <div className="text-xs sm:text-sm text-gray-400">
                Lorem ipsum, dolor sit amet consectetur adipisicing elit.

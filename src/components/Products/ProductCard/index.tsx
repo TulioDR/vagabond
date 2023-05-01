@@ -16,7 +16,7 @@ export default function ProductCard({ product }: Props) {
    const { cartState, addToCart, removeFromCart } = useCartContext();
    const { products } = cartState;
 
-   const { wishList, saveToWishlist, deleteFromWishList } =
+   const { wishlist, saveToWishlist, deleteFromWishList } =
       useWishlistContext();
 
    const [isOnCart, setIsOnCart] = useState<boolean>(false);
@@ -28,10 +28,10 @@ export default function ProductCard({ product }: Props) {
 
    const [isOnWishlist, setIsOnWishlist] = useState<boolean>(false);
    useEffect(() => {
-      const isSavedOnCart = wishList.some((p) => p.id === id);
+      const isSavedOnCart = wishlist.some((p) => p.id === id);
       if (isSavedOnCart) setIsOnWishlist(true);
       else setIsOnWishlist(false);
-   }, [wishList, id]);
+   }, [wishlist, id]);
 
    const handleWishlistClick = () => {
       if (isOnWishlist) deleteFromWishList(product.id);

@@ -3,7 +3,7 @@ import TopFooter from "./TopFooter";
 
 export default function Footer() {
    return (
-      <div className="">
+      <div className="mt-10">
          <TopFooter />
          <BottomFooter />
       </div>
