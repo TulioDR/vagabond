@@ -29,7 +29,11 @@ export default function SliderButtons({
          <div className="space-y-10">
             <div className="flex flex-col items-center space-y-3">
                {showcase.map((_pag, index) => (
-                  <PaginationButton index={index} activeIndex={activeIndex} />
+                  <PaginationButton
+                     key={index}
+                     index={index}
+                     activeIndex={activeIndex}
+                  />
                ))}
             </div>
             <div className="hidden lg:flex flex-col items-center space-y-2">
